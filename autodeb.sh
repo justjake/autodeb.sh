@@ -483,6 +483,11 @@ if [[ -x "configure" ]]; then
     CONF_CMD="./configure"
     MAKE_CMD="make"
     INST_CMD="make install"
+# Support meson+ninja as used by Sway
+elif [[ -e "meson.build" ]]; then
+    CONF_CMD="meson build"
+    MAKE_CMD="ninja -C build"
+    INST_CMD="ninja -C build install"
 else
     Abort "$LOC_NO_BUILD_ENV"
 fi
