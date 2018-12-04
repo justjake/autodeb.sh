@@ -22,5 +22,9 @@ completely different! That project lives at https://auto.debian.org
 sudo apt-get install checkinstall auto-apt
 sudo auto-apt update
 sudo auto-apt updatedb && sudo auto-apt update-local
-# TODO: curl down autodeb.sh into /usr/local/bin from this repo
+curl https://raw.githubusercontent.com/justjake/autodeb.sh/master/autodeb.sh |
+  sudo tee /usr/local/bin/autodeb.sh
+sudo chmod +x /usr/local/bin/autodeb.sh
 ```
+
+Other packages may be needed for the erstaz GUI support.
